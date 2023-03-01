@@ -16,3 +16,17 @@ set hlsearch
 set number relativenumber
 
 let g:camelcasemotion_key = '<leader>'
+
+map <leader>t :Neotree toggle<Enter>
+
+map <C-h> <C-w><
+map <C-j> <C-w>+
+map <C-k> <C-w>-
+map <C-l> <C-w>>
+
+map <leader>h <C-w><C-h>
+map <leader>j <C-w><C-j>
+map <leader>k <C-w><C-k>
+map <leader>l <C-w><C-l>
+
+map <leader>q :qa<Enter>
