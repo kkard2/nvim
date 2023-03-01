@@ -1,4 +1,5 @@
 lua require('plugins')
+lua require('barbar')
 
 call plug#begin()
 
