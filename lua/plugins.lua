@@ -35,7 +35,11 @@ return require('packer').startup(function(use)
   use {'romgrk/barbar.nvim', requires = 'nvim-web-devicons'}
 
   use {
-  'nvim-telescope/telescope.nvim', tag = '0.1.1',
-  requires = { {'nvim-lua/plenary.nvim'} }
-}
+    'nvim-telescope/telescope.nvim', tag = '0.1.1',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+
+  use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+    require("toggleterm").setup()
+  end}
 end)

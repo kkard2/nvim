@@ -1,3 +1,9 @@
+let &shell = executable('pwsh') ? 'pwsh' : 'powershell'
+let &shellcmdflag = '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;'
+let &shellredir = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
+let &shellpipe = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
+
+set shellquote= shellxquote=
 lua require('plugins')
 lua require('barbar')
 
@@ -37,3 +43,6 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+nnoremap <leader>a <cmd>ToggleTerm direction=horizontal height=20<cr>
+tnoremap <Esc> <C-\><C-n>
