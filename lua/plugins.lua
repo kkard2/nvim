@@ -24,7 +24,7 @@ return require('packer').startup(function(use)
   use {
     "nvim-neo-tree/neo-tree.nvim",
       branch = "v2.x",
-      requires = { 
+      requires = {
         "nvim-lua/plenary.nvim",
         "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
         "MunifTanjim/nui.nvim",
@@ -39,7 +39,22 @@ return require('packer').startup(function(use)
     requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use {"akinsho/toggleterm.nvim", tag = '*', config = function()
-    require("toggleterm").setup()
-  end}
+  use {
+    "akinsho/toggleterm.nvim",
+    tag = '*',
+    config = function()
+      require("toggleterm").setup()
+    end
+  }
+
+  use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+  }
+
+  require("mason").setup()
+  require("mason-lspconfig").setup()
+  require("lspconfig").lua_ls.setup {}
+  require("lspconfig").rust_analyzer.setup {}
 end)
