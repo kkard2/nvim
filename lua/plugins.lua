@@ -47,12 +47,15 @@ return require('packer').startup(function(use)
     end
   }
 
-  use "williamboman/mason.nvim"
-  use "williamboman/mason-lspconfig.nvim"
   use "neovim/nvim-lspconfig"
 
-  require("mason").setup()
-  require("mason-lspconfig").setup()
   require("lspconfig").lua_ls.setup {}
   require("lspconfig").rust_analyzer.setup {}
+
+  require("coq_3p") {
+    { src = "nvimlua", short_name = "nLUA" },
+    { src = "vimtex",  short_name = "vTEX" },
+    { src = "copilot", short_name = "COP", accept_key = "<c-f>" },
+  }
+  
 end)

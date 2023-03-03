@@ -4,15 +4,19 @@ let &shellredir = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
 let &shellpipe = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
 
 set shellquote= shellxquote=
-lua require('plugins')
-lua require('barbar')
 
 call plug#begin()
 
 Plug 'lervag/vimtex'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
 
 call plug#end()
+
+lua require('plugins')
+lua require('barbar')
 
 colorscheme catppuccin
 
