@@ -9,8 +9,6 @@ let g:coq_settings = { 'auto_start': 'shut-up' }
 
 call plug#begin()
 
-Plug 'lervag/vimtex'
-
 Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}

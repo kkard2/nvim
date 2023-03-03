@@ -47,6 +47,7 @@ return require('packer').startup(function(use)
     end
   }
 
+  use 'lervag/vimtex'
   use "neovim/nvim-lspconfig"
 
   require("lspconfig").lua_ls.setup {}
