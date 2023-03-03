@@ -5,6 +5,8 @@ let &shellpipe = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
 
 set shellquote= shellxquote=
 
+let g:coq_settings = { 'auto_start': 'shut-up' }
+
 call plug#begin()
 
 Plug 'lervag/vimtex'
