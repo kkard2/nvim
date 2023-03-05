@@ -12,6 +12,7 @@ call plug#begin()
 Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 
 call plug#end()
 
@@ -50,3 +51,6 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 nnoremap <leader>a <cmd>ToggleTerm direction=horizontal height=20<cr>
 tnoremap <Esc> <C-\><C-n>
+
+let g:livepreview_previewer = 'okular'
+nnoremap <leader>s :w<cr>:! pdflatex %:p<cr>
