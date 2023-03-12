@@ -53,4 +53,4 @@ nnoremap <leader>a <cmd>ToggleTerm direction=horizontal height=20<cr>
 tnoremap <Esc> <C-\><C-n>
 
 let g:livepreview_previewer = 'okular'
-nnoremap <leader>s :w<cr>:! pdflatex %:p<cr>
+nnoremap <leader>s :w<cr>:! pdflatex %:p<cr><esc>
