@@ -43,9 +43,9 @@ nnoremap <leader>l <C-w><C-l>
 
 nnoremap <leader>q :qa<Enter>
 
-nnoremap <leader>y \"+y
-nnoremap <leader>p \"+p
-nnoremap <leader>d \"+d
+map <leader>y "+y
+map <leader>p "+p
+map <leader>d "+d
 
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
