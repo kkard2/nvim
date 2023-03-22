@@ -27,21 +27,25 @@ set autoindent
 set hlsearch
 set number relativenumber
 
-let g:camelcasemotion_key = '<leader>'
+let g:camelcasemotion_key = '['
 
-map <leader>t :Neotree toggle<Enter>
+nnoremap <leader>t :Neotree toggle<Enter>
 
-map <C-h> <C-w><
-map <C-j> <C-w>+
-map <C-k> <C-w>-
-map <C-l> <C-w>>
+nnoremap <C-h> <C-w><
+nnoremap <C-j> <C-w>+
+nnoremap <C-k> <C-w>-
+nnoremap <C-l> <C-w>>
 
-map <leader>h <C-w><C-h>
-map <leader>j <C-w><C-j>
-map <leader>k <C-w><C-k>
-map <leader>l <C-w><C-l>
+nnoremap <leader>h <C-w><C-h>
+nnoremap <leader>j <C-w><C-j>
+nnoremap <leader>k <C-w><C-k>
+nnoremap <leader>l <C-w><C-l>
 
-map <leader>q :qa<Enter>
+nnoremap <leader>q :qa<Enter>
+
+nnoremap <leader>y \"+y
+nnoremap <leader>p \"+p
+nnoremap <leader>d \"+d
 
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
@@ -54,3 +58,4 @@ tnoremap <Esc> <C-\><C-n>
 
 let g:livepreview_previewer = 'okular'
 nnoremap <leader>s :w<cr>:! pdflatex %:p<cr><esc>
+nnoremap <leader>w :w<cr>:! pdflatex %:p<cr>
