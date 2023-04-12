@@ -8,12 +8,6 @@ return require('packer').startup(function(use)
 
 	use { 'catppuccin/nvim', as = 'catppuccin' }
 
-	require('catppuccin').setup({
-		flavour = 'mocha',
-		no_italic = true,
-		show_end_of_buffer = true,
-	})
-
 	use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 
 	use('theprimeagen/harpoon')
