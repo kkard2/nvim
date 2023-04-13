@@ -22,3 +22,7 @@ vim.keymap.set("n", "<leader>D", [["+D]])
 
 vim.keymap.set("n", "<leader>h", vim.cmd.bp)
 vim.keymap.set("n", "<leader>l", vim.cmd.bn)
+
+vim.keymap.set("n", "<leader>tt", vim.cmd.terminal)
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
+
