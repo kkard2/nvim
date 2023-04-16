@@ -23,6 +23,13 @@ vim.keymap.set("n", "<leader>D", [["+D]])
 vim.keymap.set("n", "<leader>h", vim.cmd.bp)
 vim.keymap.set("n", "<leader>l", vim.cmd.bn)
 
-vim.keymap.set("n", "<leader>tt", vim.cmd.terminal)
+vim.keymap.set("n", "<leader>tt", function()
+    -- i am sincerely sorry for the following code
+    if vim.fn.has("win32") then
+        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(":terminal<CR>ipwsh<CR>cls<CR>", true, true, true), "n", true)
+    else
+        vim.cmd("startinsert")
+    end
+end)
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 
