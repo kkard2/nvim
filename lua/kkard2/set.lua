@@ -27,3 +27,7 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
 vim.g.mapleader = " "
 
+-- only change shell to ps if on windows
+if vim.fn.has("win32") then
+    vim.opt.shell = "powershell"
+end
