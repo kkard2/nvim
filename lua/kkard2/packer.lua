@@ -45,5 +45,10 @@ return require('packer').startup(function(use)
     use { 'github/copilot.vim', as = 'copilot' }
 
     use('echasnovski/mini.trailspace')
+
+    use {
+        'folke/trouble.nvim',
+        requires = 'nvim-tree/nvim-web-devicons',
+    }
 end)
 
