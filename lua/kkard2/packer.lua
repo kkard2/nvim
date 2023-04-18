@@ -43,5 +43,7 @@ return require('packer').startup(function(use)
     }
 
     use { 'github/copilot.vim', as = 'copilot' }
+
+    use('echasnovski/mini.trailspace')
 end)
 
