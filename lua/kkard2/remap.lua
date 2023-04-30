@@ -22,14 +22,12 @@ vim.keymap.set("n", "<leader>D", [["+D]])
 
 vim.keymap.set("n", "<leader>h", vim.cmd.bp)
 vim.keymap.set("n", "<leader>l", vim.cmd.bn)
-
-vim.keymap.set("n", "<leader>tt", function()
-    -- i am sincerely sorry for the following code
-    if vim.fn.has("win32") then
-        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(":terminal<CR>ipwsh<CR>cls<CR>", true, true, true), "n", true)
-    else
-        vim.cmd("startinsert")
-    end
-end)
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 
+-- exit floating window when pressing <Esc> in normal mode
+vim.keymap.set("n", "<Esc>", function()
+    local win_number = vim.api.nvim_get_current_win()
+    if vim.api.nvim_win_get_config(win_number).relative ~= "" then
+        vim.cmd(":q")
+    end
+end)
