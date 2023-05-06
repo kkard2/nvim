@@ -31,3 +31,44 @@ vim.keymap.set("n", "<Esc>", function()
         vim.cmd(":q")
     end
 end)
+
+
+vim.keymap.set("n", "<leader>;d", function()
+    if vim.bo.filetype == "rust" then
+        vim.cmd("!cargo run")
+    else
+        vim.api.nvim_err_writeln("Unknown file type")
+    end
+end)
+
+vim.keymap.set("n", "<leader>;c", function()
+    if vim.bo.filetype == "rust" then
+        vim.cmd("!cargo clippy")
+    else
+        vim.api.nvim_err_writeln("Unknown file type")
+    end
+end)
+
+vim.keymap.set("n", "<leader>;t", function()
+    if vim.bo.filetype == "rust" then
+        vim.cmd("!cargo test")
+    else
+        vim.api.nvim_err_writeln("Unknown file type")
+    end
+end)
+
+vim.keymap.set("n", "<leader>;f", function()
+    if vim.bo.filetype == "rust" then
+        vim.cmd("!cargo fmt")
+    else
+        vim.api.nvim_err_writeln("Unknown file type")
+    end
+end)
+
+vim.keymap.set("n", "<leader>;b", function()
+    if vim.bo.filetype == "rust" then
+        vim.cmd("!cargo build")
+    else
+        vim.api.nvim_err_writeln("Unknown file type")
+    end
+end)
