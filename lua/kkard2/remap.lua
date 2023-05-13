@@ -33,42 +33,33 @@ vim.keymap.set("n", "<Esc>", function()
 end)
 
 
-vim.keymap.set("n", "<leader>;d", function()
-    if vim.bo.filetype == "rust" then
-        vim.cmd("!cargo run")
+function call_langs_func(func)
+    local status, lib = pcall(require, "kkard2.langs." .. vim.bo.filetype)
+
+    if status then
+        lib[func]()
     else
         vim.api.nvim_err_writeln("Unknown file type")
     end
+end
+
+
+vim.keymap.set("n", ",r", function()
+    call_langs_func("run")
 end)
 
-vim.keymap.set("n", "<leader>;c", function()
-    if vim.bo.filetype == "rust" then
-        vim.cmd("!cargo clippy")
-    else
-        vim.api.nvim_err_writeln("Unknown file type")
-    end
+vim.keymap.set("n", ",c", function()
+    call_langs_func("check")
 end)
 
-vim.keymap.set("n", "<leader>;t", function()
-    if vim.bo.filetype == "rust" then
-        vim.cmd("!cargo test")
-    else
-        vim.api.nvim_err_writeln("Unknown file type")
-    end
+vim.keymap.set("n", ",t", function()
+    call_langs_func("test")
 end)
 
-vim.keymap.set("n", "<leader>;f", function()
-    if vim.bo.filetype == "rust" then
-        vim.cmd("!cargo fmt")
-    else
-        vim.api.nvim_err_writeln("Unknown file type")
-    end
+vim.keymap.set("n", ",f", function()
+    call_langs_func("fmt")
 end)
 
-vim.keymap.set("n", "<leader>;b", function()
-    if vim.bo.filetype == "rust" then
-        vim.cmd("!cargo build")
-    else
-        vim.api.nvim_err_writeln("Unknown file type")
-    end
+vim.keymap.set("n", ",b", function()
+    call_langs_func("build")
 end)
