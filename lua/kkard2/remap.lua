@@ -24,6 +24,8 @@ vim.keymap.set("n", "<leader>h", vim.cmd.bp)
 vim.keymap.set("n", "<leader>l", vim.cmd.bn)
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 
+vim.keymap.set("i", "<C-Enter>", "<Esc>o")
+
 -- exit floating window when pressing <Esc> in normal mode
 vim.keymap.set("n", "<Esc>", function()
     local win_number = vim.api.nvim_get_current_win()
